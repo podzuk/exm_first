@@ -1,0 +1,575 @@
+@font-face {
+  font-family: "Aleo";
+  src: url("/fonts/Aleo-Font/lo/Aleo-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Aleo-LightItalic";
+  src: url("/fonts/Aleo-Font/lo//Aleo-LightItalic.otf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$main_font: "Josefin Sans";
+$main_color: white;
+
+@mixin button {
+  background-color: rgb(84, 116, 253);
+  width: 225px;
+  height: 60px;
+  font-size: 16px;
+  font-family: "Aleo";
+  color: $main_color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.625;
+  border: none;
+}
+
+@mixin background {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+@mixin content {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.header {
+  @include background;
+  background-color: #0462b0;
+  background-image: url(img/header_bg.png);
+  height: 820px;
+  &__content {
+    @include content;
+    width: 1120px;
+    height: 820px;
+  }
+  &__title {
+    font-size: 48px;
+    font-family: $main_font;
+    color: $main_color;
+    text-transform: uppercase;
+    line-height: 0.542;
+    letter-spacing: 3.8px;
+    text-align: center;
+    position: absolute;
+    left: 400px;
+    top: 277px;
+  }
+  &__subtitle {
+    font-size: 22px;
+    font-family: $main_font;
+    font-weight: 300;
+    color: $main_color;
+    line-height: 1.182;
+    letter-spacing: 6px;
+    text-align: center;
+    position: absolute;
+    left: 402px;
+    top: 320px;
+  }
+  &__input {
+    font-size: 14px;
+    font-family: $main_font;
+    color: rgb(153, 153, 153);
+    line-height: 1.857;
+    padding-left: 125px;
+    letter-spacing: 2px;
+    background-color: $main_color;
+    position: relative;
+    left: 235px;
+    top: 390px;
+    width: 650px;
+    height: 60px;
+  }
+  &__btn {
+    font-family: "Aleo";
+    text-align: center;
+    border: none;
+    background-color: rgb(84, 116, 253);
+    position: absolute;
+    left: 737px;
+    top: 392px;
+    width: 146px;
+    height: 56px;
+    font-size: 14px;
+    color: $main_color;
+    text-transform: uppercase;
+    line-height: 4;
+    text-align: center;
+  }
+  &__scroll {
+    font-size: 14px;
+    font-family: $main_font;
+    font-weight: 300;
+    letter-spacing: 2.4px;
+    color: rgb(255, 255, 255);
+    line-height: 1.857;
+    text-align: center;
+    position: absolute;
+    left: 514px;
+    top: 565px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .header__scroll {
+      left: 220px;
+    }
+    .header__title {
+      left: 90px;
+    }
+    .header__subtitle {
+      left: 90px;
+    }
+    .header__input {
+      left: 0;
+      width: 483px;
+      height: 60px;
+      padding-left: 60px;
+    }
+    .header__btn {
+      left: 360px;
+      width: 120px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    padding-right: 330px;
+    box-sizing: border-box;
+    bottom: 0;
+    background-color: #5474fd;
+    width: 1770px;
+    height: 80px;
+    left: -325px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  &__menu_logo {
+    position: absolute;
+    left: 330px;
+    letter-spacing: 1px;
+    top: 30px;
+    font-size: 24px;
+    font-family: $main_font;
+    color: $main_color;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.083;
+  }
+  &__menu_item {
+    margin-left: 43px;
+    font-size: 14px;
+    font-family: "Aleo";
+    color: $main_color;
+    text-transform: uppercase;
+    margin-top: 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .header__menu_logo {
+      display: none;
+    }
+    .header__menu_item {
+      margin-left: 15px;
+    }
+    .header__menu {
+      justify-content: flex-start;
+      padding-left: 330px;
+    }
+  }
+}
+.header__search {
+  line-height: 3;
+  font-size: 20px;
+  float: right;
+  margin-right: 15px;
+}
+.header a {
+  text-decoration: none;
+  color: $main_color;
+}
+.header a:hover {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+.choose {
+  @include background;
+  background-color: #433a37;
+  background-image: url(img/choose_bg.png);
+  min-height: 685px;
+  &__content {
+    @include content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 1120px;
+    min-height: 685px;
+  }
+  &__left_content {
+    width: 50%;
+  }
+  &__title {
+    font-size: 36px;
+    font-family: "Aleo";
+    color: $main_color;
+    line-height: 0.722;
+    text-align: left;
+    position: absolute;
+    top: 205px;
+    left: 5px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-family: $main_font;
+    color: $main_color;
+    line-height: 1.625;
+    text-align: left;
+    position: absolute;
+    letter-spacing: 0.6px;
+    top: 295px;
+    left: 5px;
+  }
+  &__button {
+    @include button;
+    position: absolute;
+    top: 493px;
+    left: 5px;
+  }
+
+  &__right_content {
+    padding-top: 120px;
+    box-sizing: border-box;
+    width: 50%;
+  }
+  &__foto1 {
+    width: 477px;
+    height: 220px;
+    float: left;
+    margin-left: 80px;
+  }
+  &__foto2 {
+    width: 477px;
+    height: 220px;
+    float: right;
+    margin-right: -122px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .choose__subtitle {
+    letter-spacing: -0.5px;
+  }
+  .choose__right_content {
+    display: none;
+  }
+}
+
+.block3 {
+  @include background;
+  background-color: #333333;
+  background-image: url(img/block3_bg.png);
+  min-height: 337px;
+  &__content {
+    @include content;
+    width: 1120px;
+    min-height: 337px;
+  }
+  &__line {
+    position: relative;
+    margin-top: 45px;
+    margin-left: 175px;
+  }
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -50px;
+  }
+  &__items_text {
+    margin-top: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__items1 {
+    width: 65px;
+    height: 60px;
+  }
+  &__items1--center {
+    width: 65px;
+    height: 60px;
+    margin-left: 314px;
+    margin-right: 314px;
+  }
+  &__items_text1 {
+    font-size: 36px;
+    font-family: "Aleo";
+    color: $main_color;
+    line-height: 0.722;
+  }
+  &__items_text1--center {
+    margin-left: 200px;
+    margin-right: 135px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .block3__line {
+    display: none;
+  }
+  .block3__items_text {
+    display: none;
+  }
+  .block3__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-bottom: 50px; // не розумію чому не віддаляються
+  }
+  .block3__items1--center {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.spain {
+  @include background;
+  background-color: #a5a0b4;
+  background-image: url(img/spain1_bg.png);
+  height: 700px;
+  &__content {
+    @include content;
+    width: 1120px;
+    height: 700px;
+  }
+  &__content_block {
+    float: left;
+    margin-top: 230px;
+    margin-left: 5px;
+    width: 540px;
+    height: 370px;
+    background-color: #292423;
+    opacity: 0.9;
+    color: $main_color;
+  }
+  &__title {
+    font-size: 20px;
+    font-family: $main_font;
+    color: $main_color;
+    line-height: 1.3;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-top: 46px;
+  }
+  &__subtitle {
+    font-size: 20px;
+    font-family: $main_font;
+    color: $main_color;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: -0.55px;
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+  &__text {
+    font-size: 16px;
+    font-family: $main_font;
+    color: $main_color;
+    line-height: 1.7;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: -0.55px;
+    margin-left: 30px;
+    margin-top: 17px;
+  }
+  &__button {
+    @include button;
+    margin-left: 30px;
+    margin-top: 40px;
+  }
+  &__content_block--position {
+    float: right;
+    margin-right: 5px;
+  }
+}
+.spain--add_bg {
+  background-color: #fc9479;
+  background-image: url(img/spain2_bg.png);
+}
+
+@media screen and (max-width: 1200px) {
+  .spain__content_block {
+    width: 450px;
+    float: left;
+  }
+}
+
+.tourist {
+  @include background;
+  background-color: #292b2c;
+  background-image: url(img/tourist_bg.png);
+  height: 735px;
+  &__content {
+    @include content;
+    width: 1120px;
+    height: 735px;
+  }
+  &__title {
+    position: absolute;
+    font-size: 36px;
+    font-family: "Aleo";
+    color: $main_color;
+    line-height: 0.722;
+    text-align: center;
+    letter-spacing: 0.5px;
+    left: 380px;
+    top: 120px;
+  }
+  &__main_block {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    margin: auto;
+    top: 44px;
+    left: 5px;
+    bottom: 0;
+  }
+  &__subtitle {
+    width: 100%;
+    background-color: #333333;
+  }
+  &__name {
+    font-size: 20px;
+    font-family: $main_font;
+    color: $main_color;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: left;
+    position: absolute;
+    left: 502px;
+    top: 48px;
+  }
+  &__histori {
+    font-size: 16px;
+    font-family: $main_font;
+    color: $main_color;
+    line-height: 1.7;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: -0.55px;
+    margin-left: 60px;
+    margin-top: 111px;
+    text-indent: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tourist__title {
+    left: 50px;
+  }
+  .tourist__subtitle {
+    display: none;
+  }
+  .tourist__foto {
+    margin-left: 15px;
+  }
+}
+.footer {
+  @include background;
+  background-color: #232323;
+  margin-top: -3px;
+  height: 270px;
+  &__content {
+    @include content;
+    width: 1120px;
+    height: 270px;
+  }
+  &__title {
+    font-size: 24px;
+    font-family: $main_font;
+    color: $main_color;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.083;
+    text-align: left;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    position: absolute;
+    top: 120px;
+    left: 477px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-family: $main_font;
+    color: $main_color;
+    line-height: 1.625;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    position: absolute;
+    top: 150px;
+    left: 477px;
+  }
+  &__social_networks {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    left: 455px;
+  }
+  &__items {
+    color: $main_color;
+    margin-left: 20px;
+  }
+  &__items--color {
+    color: #5474fd;
+  }
+  .footer__items:hover {
+    color: #5474fd;
+  }
+}
+
+.header__input:focus {
+  border: blue;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer__title {
+    left: 150px;
+  }
+  .footer__subtitle {
+    left: 150px;
+  }
+  .footer__social_networks {
+    left: 130px;
+  }
+}
+button:active {
+  background-color: cadetblue;
+  border: black;
+}
